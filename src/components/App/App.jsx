@@ -6,15 +6,14 @@ import Header from "../Header/Header";
 import Dashboard from "../Dashboard/Dashboard";
 import Reviews from "../Reviews/Reviews";
 import Review from "../Review/Review";
-
 import AboutUs from "../AboutUs/AboutUs";
 import SiteHistory from "../AboutUs/SiteHistory";
 import SiteMission from "../AboutUs/SiteMission";
-
 import AboutMe from "../AboutMe/AboutMe";
 import MyStory from "../AboutMe/MyStory";
 import Contact from "../AboutMe/Contact";
 import Hobbies from "../AboutMe/Hobbies";
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 function App() {
   const [reviews, setReviews] = useState([]);
@@ -33,6 +32,8 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
+        <Route path="*" element={<PageNotFound />} />
+
         <Route path="/" element={<Dashboard />} />
         <Route path="/reviews" element={<Reviews reviews={reviews} />} />
         <Route
